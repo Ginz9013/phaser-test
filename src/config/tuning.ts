@@ -27,6 +27,26 @@ export const TUNING = {
     coyoteMs: 100,       // 離開地面後仍可跳的寬限時間
     jumpBufferMs: 120,   // 落地前預按跳躍的緩衝時間
     jumpCutMultiplier: 0.4, // 放開跳躍鍵時，上升速度乘以這個值（可變跳躍高度）
+
+    // 受傷 / 踩頭
+    stompBounce: -380,   // 踩死敵人後的彈跳力（比一般跳躍小，才有「輕點」感）
+    invincibleMs: 1200,  // 受傷後無敵時間（會閃爍）
+    controlLockMs: 220,  // 受傷後失去操控的時間，讓擊退真的推得動
+    knockbackX: 200,
+    knockbackY: -260,
+  },
+
+  enemy: {
+    width: 26,
+    height: 26,
+    speed: 60,           // 巡邏速度
+    turnAtEdge: true,    // true = 走到平台邊緣會回頭（栗寶寶其實不會，關掉更兇）
+  },
+
+  rules: {
+    startLives: 3,
+    coinScore: 100,
+    stompScore: 200,
   },
 
   camera: {
