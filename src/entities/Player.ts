@@ -20,6 +20,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     scene.physics.add.existing(this);
 
     const t = TUNING.player;
+    // 貼圖 32x32、碰撞框 20x32，setSize 預設置中 → offset (6, 0)，底邊剛好對齊腳底。
+    // 注意 setSize 吃的是「貼圖座標」，會再乘上 sprite 的 scale，所以主角刻意不縮放。
     this.body.setSize(t.width, t.height);
     this.body.setMaxVelocity(10000, t.maxFallSpeed);
     this.setCollideWorldBounds(false);

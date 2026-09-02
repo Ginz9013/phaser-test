@@ -2,8 +2,9 @@ import Phaser from 'phaser';
 import { TUNING } from '../config/tuning';
 
 /**
- * 現階段不載入圖檔 —— 直接用色塊產生貼圖。
- * 等玩法定案再把這些 generateTexture 換成 this.load.spritesheet(...)。
+ * 主角用真的貼圖，其餘還是色塊 placeholder。
+ * public/assets/player.png 由 `npm run sprite:player` 從原始素材產生，
+ * 已經是遊戲尺寸 32x32，載進來 1:1 顯示，不要再縮放。
  */
 export class PreloadScene extends Phaser.Scene {
   constructor() {
@@ -12,11 +13,11 @@ export class PreloadScene extends Phaser.Scene {
 
   preload() {
     const ts = TUNING.world.tileSize;
-    const p = TUNING.player;
     const e = TUNING.enemy;
 
+    this.load.image('player', 'assets/player.png');
+
     this.makeRect('tile', ts, ts, 0x3c4a6b, 0x556487);
-    this.makeRect('player', p.width, p.height, 0x4fc3f7, 0xb3e5fc);
     this.makeRect('enemy', e.width, e.height, 0xef5350, 0xffcdd2);
     this.makeRect('goal', 12, 72, 0x66bb6a, 0xc8e6c9);
     this.makeCircle('coin', 7, 0xffd54f, 0xfff8e1);

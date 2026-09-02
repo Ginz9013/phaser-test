@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --host"
+    "preview": "vite preview --host",
+    "sprite:player": "node tools/pixelize.mjs \"public/assets/\u30ec\u30f3\u30b8\u30e3\u30fc\uff08\u30ec\u30c3\u30c9\uff09.png\" public/assets/player.png --scale 2"
   },
   "dependencies": {
     "phaser": "3.90.0"

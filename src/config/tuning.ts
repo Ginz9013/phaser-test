@@ -9,8 +9,9 @@ export const TUNING = {
   },
 
   player: {
-    width: 22,
-    height: 30,
+    // 碰撞框大小（貼圖是 32x32，比碰撞框寬 —— 伸出去的雙手不吃判定，對玩家寬容）
+    width: 20,
+    height: 32,
 
     // 水平移動
     maxSpeed: 220,       // 最高跑速 (px/s)
